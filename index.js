@@ -13,7 +13,7 @@ document.getElementById("formulaire-tache").addEventListener("submit", function 
 function ajouterTache(nom, description, dateDeCreation, echeance) {
     const listeTaches = document.getElementById("liste-taches");
 
-// Créer l'élément de tâche
+    // Créer l'élément de tâche
     const tacheElement = document.createElement("li");
     tacheElement.setAttribute("class", "list-group-item d-flex justify-content-between align-items-start");
 
@@ -45,9 +45,9 @@ function ajouterTache(nom, description, dateDeCreation, echeance) {
     // Créer le bouton "Terminé"
     const boutonTermine = document.createElement("button");
     boutonTermine.setAttribute("class", "btn btn-success btn-sm me-1");
-    boutonTermine.textContent = "Terminé";
+    boutonTermine.textContent = "Terminer";
     boutonTermine.onclick = function () {
-        marquerTerminee(this);
+        marquerTermine(this);
     };
 
     // Créer le bouton modifier
@@ -87,9 +87,9 @@ function ajouterTache(nom, description, dateDeCreation, echeance) {
 }
 
 // marquer une tâche comme terminée
-function marquerTerminee(bouton) {
+function marquerTermine(bouton) {
     const tacheElement = bouton.parentElement.parentElement;
-    tacheElement.classList.toggle("list-group-item-success"); // Ajoute ou enlève la classe de succès
+    tacheElement.classList.toggle("list-group-item-success"); // Ajoute ou enlève la classe de succès si la tâche est terminée ou non
 }
 
 // modifier une tâche
@@ -122,5 +122,5 @@ function trierTachesParDate() {
         return dateA - dateB;
     });
 
-    taches.forEach(tache => listeTaches.appendChild(tache)); // trie les tâches dans la liste la date la plus proche à la plus éloigné
+    taches.forEach(tache => listeTaches.appendChild(tache)); // trie les tâches dans la liste, de la date la plus proche à la plus éloigné
 }

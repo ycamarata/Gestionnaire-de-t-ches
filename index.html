@@ -8,26 +8,31 @@
   <title>Gestionnaire de tâches</title>
 </head>
 
-<body>
-  <h2 class="text-center m-2">Gestion des tâches</h2>
-  <form class="card card-body row items-center text-center" id="formulaire-tache">
-    <div class="mb-3">
-      <label for="nom-tache" class="form-label">Ajoutez une tâche</label>
-      <input id="nom-tache" type="text" class="form-control" placeholder="Ajouter une tâche" required>
-    </div>
-    <div class="mb-3">
-      <label for="description-tache" class="form-label">Description:</label>
-      <textarea name="description" id="description-tache" class="form-control" rows="3" required></textarea>
-    </div>
-    <div class="mb-3">
-      <label for="echeance-tache" class="form-label">Échéance:</label>
-      <input type="date" id="echeance-tache" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Ajoutez</button>
-  </form>
+<body class="bg-light">
 
-  <button class="btn btn-secondary m-2" onclick="trierTachesParDate()">Trier par date limite</button>
-  <ul id="liste-taches" class="list-group"></ul>
+  <header>
+    <h2 class="text-center m-2 text-info">Gestion des tâches</h2>
+  </header>
+
+  <main class="row justify-content-center text-center items-center m-5 bg-success rounded-4">
+    <form class="card card-body row m-1 mb-0 bg-light" id="formulaire-tache">
+      <div class="mb-3">
+        <label for="nom-tache" class="form-label">Ajoutez une tâche</label>
+        <input id="nom-tache" type="text" class="form-control" placeholder="Ajouter une tâche" required>
+      </div>
+      <div class="mb-3">
+        <label for="description-tache" class="form-label">Description:</label>
+        <textarea name="description" id="description-tache" class="form-control" rows="3" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="echeance-tache" class="form-label">Échéance:</label>
+        <input type="date" id="echeance-tache" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-25">Ajoutez</button>
+    </form>
+    <button class="btn btn-primary w-25 m-2" onclick="trierTachesParDate()">Trier par date limite</button>
+    <ul id="liste-taches" class="list-group"></ul>
+  </main>
 
   <script src="bootstrap-5.3.3/dist/js/bootstrap.min.js"></script>
   <script src="index.js"></script>
